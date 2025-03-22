@@ -1,22 +1,22 @@
 # RESUMO 
 
-	Este projeto propõe o desenvolvimento de um protótipo IoT que simula e controla a iluminação interna de um ambiente, utilizando a placa BitDogLab, baseada no microcontrolador RP2040. O objetivo central consiste em aplicar conceitos de automação residencial e sistemas embarcados, integrando diversos periféricos (botões, LED RGB, display LCD, buzzer e joystick) e utilizando comunicação sem fio (Wi-Fi) para envio de dados a um serviço na nuvem (ThingSpeak). A metodologia envolveu a simulação da medição de intensidade luminosa através de recursos locais, implementando três modos de operação: iluminação automática, manual e desligada. Os testes demonstraram que o sistema atende aos requisitos propostos, apresentando respostas coerentes e feedback visual e sonoro adequados, o que reforça seu potencial para aplicações práticas em ambientes tecnológicos e residenciais. 
+ Este projeto propõe o desenvolvimento de um protótipo IoT que simula e controla a iluminação interna de um ambiente, utilizando a placa BitDogLab, baseada no microcontrolador RP2040. O objetivo central consiste em aplicar conceitos de automação residencial e sistemas embarcados, integrando diversos periféricos (botões, LED RGB, display LCD, buzzer e joystick) e utilizando comunicação sem fio (Wi-Fi) para envio de dados a um serviço na nuvem (ThingSpeak). A metodologia envolveu a simulação da medição de intensidade luminosa através de recursos locais, implementando três modos de operação: iluminação automática, manual e desligada. Os testes demonstraram que o sistema atende aos requisitos propostos, apresentando respostas coerentes e feedback visual e sonoro adequados, o que reforça seu potencial para aplicações práticas em ambientes tecnológicos e residenciais. 
 
 Palavras-chave: BitDogLab. IoT. Iluminação. Automação. Simulação. 
 
 # INTRODUÇÃO  
 
-A crescente demanda por soluções de automação residencial tem impulsionado a inovação na integração entre hardware e software para melhorar o conforto e a eficiência energética dos ambientes. Neste projeto, optou-se por desenvolver um sistema inteligente de controle de iluminação utilizando a BitDogLab, que se destaca por sua versatilidade e capacidade de integração com diversos componentes periféricos. 
-	A escolha deste tema se justifica pela oportunidade de aplicar e consolidar conhecimentos práticos em sistemas embarcados, utilizando recursos como ADC, PWM, interfaces gráficas e comunicação via Wi-Fi. Além disso, o projeto aborda o desafio de simular a medição de intensidade luminosa na ausência de um sensor físico, contornando essa limitação por meio de uma implementação inovadora. 
+ A crescente demanda por soluções de automação residencial tem impulsionado a inovação na integração entre hardware e software para melhorar o conforto e a eficiência energética dos ambientes. Neste projeto, optou-se por desenvolver um sistema inteligente de controle de iluminação utilizando a BitDogLab, que se destaca por sua versatilidade e capacidade de integração com diversos componentes periféricos. 
+ A escolha deste tema se justifica pela oportunidade de aplicar e consolidar conhecimentos práticos em sistemas embarcados, utilizando recursos como ADC, PWM, interfaces gráficas e comunicação via Wi-Fi. Além disso, o projeto aborda o desafio de simular a medição de intensidade luminosa na ausência de um sensor físico, contornando essa limitação por meio de uma implementação inovadora. 
 Objetivo Geral: Desenvolver um protótipo IoT que possibilite o controle inteligente da iluminação interna, demonstrando a integração dos diversos componentes e a comunicação com serviços na nuvem. 
 
 # METODOLOGIA  
 
-A metodologia adotada para o desenvolvimento do protótipo envolveu a integração de componentes específicos (joystick, LEDs, display OLED, entre outros) e a utilização de tecnologias modernas de comunicação (Wi-Fi e protocolo HTTP). Para organizar o desenvolvimento e facilitar a manutenção, o projeto foi dividido em módulos, cada um responsável por uma funcionalidade específica. Na pasta inc/, encontram-se os arquivos de cabeçalho (.h) que declaram funções e estruturas, enquanto na pasta src/ estão as implementações (.c). 
+ A metodologia adotada para o desenvolvimento do protótipo envolveu a integração de componentes específicos (joystick, LEDs, display OLED, entre outros) e a utilização de tecnologias modernas de comunicação (Wi-Fi e protocolo HTTP). Para organizar o desenvolvimento e facilitar a manutenção, o projeto foi dividido em módulos, cada um responsável por uma funcionalidade específica. Na pasta inc/, encontram-se os arquivos de cabeçalho (.h) que declaram funções e estruturas, enquanto na pasta src/ estão as implementações (.c). 
 
 A seguir, são descritos os módulos: 
 
-joystick.h / joystick.c 
+- joystick.h / joystick.c 
 Módulo que gerencia as leituras analógicas do joystick e o tratamento de interrupções do botão. Permite a navegação pelos menus e a seleção de opções. 
 
 led.h / led.c 
