@@ -68,6 +68,8 @@ A seguir, são descritos os principais módulos e recursos empregados:
 
 	- **DNS:** Para resolução do endereço do servidor ThingSpeak.
 
+ 
+
 # Descrição dos Módulos 
 
 **Módulo Joystick (joystick.c):**  
@@ -77,7 +79,6 @@ Gerencia a leitura dos valores analógicos do joystick e o tratamento de eventos
 - **Leitura:** A função `ler_joystick_y()` lê e escala o valor do eixo Y.
 - **Interrupção:** A função `button_irq_callback()` trata o pressionamento do botão, utilizando debounce para evitar leituras indevidas.
 
-_Fig. 2 – Trecho de código do módulo joystick para ler posição do eixo Y._
 
 **Módulo LED (led.c):**
 
@@ -87,7 +88,6 @@ Responsável pelo controle do brilho dos LEDs utilizando PWM:
 - **Configuração PWM:** `setup_pwm()` configura os pinos e ativa o PWM com parâmetros ajustados (PERIOD e DIVIDER_PWM).
 - **Ajuste de Brilho:** Funções `set_brightness()` e `set_brightness_smooth()` permitem ajustar o brilho de forma imediata ou gradual.
 
-_Fig. 2 – Trecho de código do módulo led que ajusta brilho de forma gradual._
 
 **Módulo Menu (menu.c):**  
 Implementa a interface gráfica no display OLED para seleção dos modos de operação:
@@ -96,7 +96,6 @@ Implementa a interface gráfica no display OLED para seleção dos modos de oper
 - **Atualização:** `atualizar_menu()` redesenha o menu destacando a opção selecionada.
 - **Controle:** `controle_menu()` utiliza os valores lidos do joystick para navegar entre as opções.
 
-_Fig. 3 – Trecho de código do módulo menu que atualiza o display._
 
 **Módulo ThingSpeak (thingspeak.c):**  
 Gerencia a comunicação com a nuvem, enviando os dados simulados de luminosidade:
@@ -105,7 +104,6 @@ Gerencia a comunicação com a nuvem, enviando os dados simulados de luminosidad
 - **Envio de Dados:** `enviar_luminosidade_ao_thingspeak()` prepara e envia uma requisição HTTP GET ao servidor ThingSpeak, utilizando a chave de API e o valor de luminosidade.
 - **Callbacks:** Funções como `dns_callback()`, `http_connected_callback()` e `http_recv_callback()` gerenciam a resolução de DNS, estabelecimento da conexão TCP e recebimento da resposta.
 
-_Fig. 4 - Trecho de código do módulo thingspeak para conectar ao wi-fi._
 
 **Integração Geral (main.c):**  
 Coordena a execução dos módulos, controlando o fluxo entre a interação do usuário, o ajuste dos LEDs e a comunicação com a nuvem. O fluxo geral inclui:
@@ -114,7 +112,6 @@ Coordena a execução dos módulos, controlando o fluxo entre a interação do u
 - Exibição e controle do menu para seleção dos modos de operação.
 - Execução dos modos escolhidos, com ajustes de brilho e envio dos dados para o ThingSpeak.
 
-_Fig. 5 - Visualização do fluxo geral de funcionamento. Apesar de ocultado, o buzzer é ativado toda vez que entra no modo selecionado e toda vez que sai do modo selecionado._
 
 # RESULTADOS ALCANÇADOS e Discussões  
 
@@ -130,8 +127,6 @@ Durante os testes, o protótipo demonstrou desempenho consistente em todos os mo
   Ao optar por desligar a iluminação, o sistema desativa os LEDs e exibe a confirmação da ação, validando o controle e a resposta imediata do sistema.
 
 Além disso, a integração com o ThingSpeak possibilitou o envio dos dados de luminosidade simulada via HTTP, demonstrando a viabilidade da comunicação com a nuvem e a possibilidade de monitoramento remoto.
-
-_Fig. 6 - Visualização dos dados enviados à nuvem do ThingSpeak._
 
 Os resultados obtidos comprovam que o protótipo atende aos requisitos propostos, superando o desafio da ausência de um sensor físico e integrando de forma robusta os componentes específicos e as tecnologias de comunicação.
 
